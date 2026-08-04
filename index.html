@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<title>Chess — Notation Only</title>
+<title>OTB Chess — Real board. No screen.</title>
 <style>
   :root{
     --bg:#e8eef6; --panel:rgba(255,255,255,.74); --panel2:rgba(255,255,255,.88);
@@ -38,14 +38,19 @@
   /* ---------- setup ---------- */
   .setup{display:flex;flex-direction:column;gap:16px;justify-content:center;flex:1;
     padding:6px 4px}
-  .hero{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:2px}
-  .mark{width:88px;height:88px;border-radius:26px;display:grid;place-items:center;
-    background:linear-gradient(150deg,#4a86ba 0%,#1c3a56 100%);
-    box-shadow:0 10px 28px rgba(0,0,0,.45);overflow:hidden}
-  .brand{text-align:center}
-  .brand h1{font-size:1.7em;font-weight:700;letter-spacing:5px;margin-left:5px}
-  .brand .sub{color:var(--dim);font-size:.76em;letter-spacing:2.6px;text-transform:uppercase;margin-top:3px}
-  .tagline{text-align:center;color:var(--dim);font-size:.84em;line-height:1.45;max-width:290px;margin:0 auto}
+  .hero{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:4px}
+  .logo{display:flex;align-items:center;gap:14px;color:#2b2723}
+  .logo .knight{width:62px;height:62px;fill:currentColor;display:block}
+  .logo .divider{width:2px;height:52px;background:currentColor;opacity:.9}
+  .logo .wordmark{font-size:2.9rem;font-weight:400;letter-spacing:6px;line-height:1;
+    font-family:"Futura","Century Gothic",-apple-system,sans-serif}
+  .brand{text-align:center;margin-top:-2px}
+  .brand .sub{color:#2b2723;font-size:.82em;letter-spacing:9px;text-transform:uppercase;
+    margin-left:9px;opacity:.85}
+  .claim{text-align:center;font-size:1.02em;font-weight:600;color:var(--txt);
+    letter-spacing:.2px;margin-top:8px}
+  .tagline{text-align:center;color:var(--dim);font-size:.82em;line-height:1.5;
+    max-width:320px;margin:0 auto}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px}
   label{font-size:.7em;color:var(--dim);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:1.2px}
   select,button,input{font:inherit;border-radius:10px;border:1px solid var(--line);
@@ -299,25 +304,18 @@
     <div class="ghost" id="ghost" aria-hidden="true"></div>
 
     <div class="hero">
-      <div class="mark">
-        <svg viewBox="0 0 64 64" width="60" height="60" aria-hidden="true">
-          <g fill="#ffffff" opacity=".18">
-            <rect x="4" y="4" width="14" height="14"/><rect x="32" y="4" width="14" height="14"/>
-            <rect x="18" y="18" width="14" height="14"/><rect x="46" y="18" width="14" height="14"/>
-            <rect x="4" y="32" width="14" height="14"/><rect x="32" y="32" width="14" height="14"/>
-            <rect x="18" y="46" width="14" height="14"/><rect x="46" y="46" width="14" height="14"/>
-          </g>
-          <text x="32" y="43" text-anchor="middle" fill="#ffffff"
-                font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
-                font-size="30" font-weight="700" letter-spacing="-1">e4</text>
+      <div class="logo">
+        <svg viewBox="0 0 220 200" class="knight" aria-hidden="true">
+          <path d="M40 168h116v14c0 4-3 7-7 7H47c-4 0-7-3-7-7v-14zM47 160c1-14 7-25 17-34 14-13 26-25 32-41l-14 3c-7 1-11-5-8-11l10-19-24 12c-6 3-11-2-9-9 6-20 20-35 41-44 5-2 8-6 9-11l3-13c1-6 8-8 12-3l8 10c2 2 5 3 8 2l12-5c5-2 10 2 9 8l-2 12c-1 4 1 8 5 10 30 17 47 47 49 89l3 44H47z"/>
         </svg>
+        <span class="divider"></span>
+        <span class="wordmark">OTB</span>
       </div>
       <div class="brand">
-        <h1>CHESS</h1>
-        <div class="sub">notation only</div>
-        <div class="sub" style="letter-spacing:1px;opacity:.5;font-size:.62em">v17 · turnpair</div>
+        <div class="sub">chess</div>
       </div>
-      <p class="tagline">Play on your real board.<br>Read the opponent's move, tap yours.</p>
+      <p class="claim">Real chess. Real board. No screen.</p>
+      <p class="tagline">OTB gives you the move notation and nothing else —<br>you play the game on a real board.</p>
     </div>
 
     <div id="loaderBox" class="msg">Loading engine…</div>
