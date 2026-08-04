@@ -236,13 +236,12 @@
 
   /* ---- GLASS : light, translucent, iOS ---- */
   
-  html body{background:linear-gradient(165deg,#eaf0f8 0%,#dbe6f4 55%,#e9e4f6 100%)}
   html .panel,html .composer,html .stage,
   html .badge,html .state,html .card{
     backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
     box-shadow:0 6px 22px rgba(80,62,40,.10);border-color:rgba(255,253,248,.75)}
-  html .key{background:rgba(255,253,248,.92);border:1px solid rgba(43,39,35,.12);
-    border-radius:15px;box-shadow:0 2px 6px rgba(80,62,40,.09)}
+  html .key{background:var(--panel2);border:1px solid rgba(43,39,35,.12);
+    border-radius:15px;box-shadow:0 2px 6px rgba(43,39,35,.07)}
   html .key .g{color:#5a5148}
   html .stage,html .composer{border-radius:20px}
   html .sq.l{background:#efe6d4}html .sq.d{background:#b09274}
